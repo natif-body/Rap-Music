@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAP — Culture, Business & Marketing Power</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Bebas+Neue&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#08080e;--sf:#12121e;--ac:#ff2d55;--cy:#00e5ff;--pu:#8b5cf6;--go:#fbbf24;--tx:#eee;--mu:#777}
+html,body{height:100%;overflow:hidden}
+body{background:var(--bg);color:var(--tx);font-family:'DM Mono',monospace}
+body::after{content:'';position:fixed;inset:0;opacity:.03;pointer-events:none;z-index:9999;background:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+#bar{position:fixed;top:0;left:0;height:3px;z-index:200;transition:width .5s;background:linear-gradient(90deg,var(--ac),var(--pu),var(--cy))}
+.S{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 28px 80px;opacity:0;pointer-events:none;transform:translateY(24px);transition:all .55s cubic-bezier(.16,1,.3,1);overflow-y:auto}
+.S.on{opacity:1;pointer-events:all;transform:none}
+nav{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:14px 30px;background:linear-gradient(transparent,rgba(8,8,14,.97));z-index:100}
+nav button{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:var(--tx);padding:9px 22px;font-family:'Oswald';font-size:13px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;border-radius:4px;transition:.3s}
+nav button:hover:not(:disabled){background:var(--ac);border-color:var(--ac)}
+nav button:disabled{opacity:.2;cursor:default}
+#cnt{font-family:'Bebas Neue';font-size:17px;color:var(--mu);letter-spacing:3px}
+.tg{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--ac);margin-bottom:14px}
+h1{font-family:'Bebas Neue';font-size:clamp(42px,8vw,100px);line-height:.93;text-align:center;letter-spacing:-1px}
+h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-align:center;letter-spacing:1px;margin-bottom:20px}
+.sb{font-size:14px;color:var(--mu);text-align:center;max-width:580px;line-height:1.7}
+.r{color:var(--ac)}.c{color:var(--cy)}.p{color:var(--pu)}.g{color:var(--go)}
+.row{display:flex;gap:18px;margin-top:28px;flex-wrap:wrap;justify-content:center;max-width:1060px}
+.cd{background:var(--sf);border:1px solid rgba(255,255,255,.05);border-radius:10px;padding:24px 20px;width:230px;text-align:center;transition:.3s}
+.cd:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.1)}
+.ci{font-size:34px;margin-bottom:12px}
+.ct{font-family:'Oswald';font-size:15px;font-weight:600;margin-bottom:6px;letter-spacing:.5px}
+.cx{font-size:11px;color:var(--mu);line-height:1.7}
+.st{display:flex;gap:44px;margin-top:32px;flex-wrap:wrap;justify-content:center}
+.sn{font-family:'Bebas Neue';font-size:50px;line-height:1}
+.sl{font-size:10px;color:var(--mu);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+
+/* TIMELINE */
+.tl{display:flex;flex-direction:column;gap:0;margin-top:24px;max-width:700px;width:100%;position:relative;padding-left:32px}
+.tl::before{content:'';position:absolute;left:10px;top:8px;bottom:8px;width:2px;background:linear-gradient(var(--ac),var(--pu),var(--cy))}
+.te{position:relative;padding:12px 0 12px 20px}
+.te::before{content:'';position:absolute;left:-26px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--ac);border:2px solid var(--bg)}
+.te:nth-child(2)::before{background:var(--pu)}
+.te:nth-child(3)::before{background:var(--cy)}
+.te:nth-child(4)::before{background:var(--go)}
+.te:nth-child(5)::before{background:#00ff88}
+.ty{font-family:'Bebas Neue';font-size:22px;letter-spacing:2px;color:var(--go)}
+.td{font-size:12px;color:var(--mu);line-height:1.6;margin-top:2px}
+.td b{color:var(--tx)}
+
+.eg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin-top:24px;max-width:840px;width:100%}
+.ex{background:var(--sf);border-radius:10px;padding:18px;border-left:3px solid var(--pu);transition:.3s}
+.ex:hover{border-left-color:var(--ac)}
+.en{font-family:'Oswald';font-size:14px;font-weight:600;margin-bottom:4px}
+.ed{font-size:11px;color:var(--mu);line-height:1.6}
+.tk{background:var(--sf);border-radius:10px;padding:20px 24px;max-width:660px;width:100%;margin-top:12px;display:flex;align-items:flex-start;gap:14px;border:1px solid rgba(255,255,255,.04)}
+.tn{font-family:'Bebas Neue';font-size:28px;color:var(--pu);line-height:1}
+.tt{font-size:13px;line-height:1.7}.tt b{color:var(--cy)}
+
+/* GAME */
+.gm{width:100%;max-width:940px;text-align:center}
+.dots{display:flex;gap:7px;justify-content:center;margin-bottom:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.1);transition:.3s}
+.dot.on{background:var(--ac)}.dot.dn{background:var(--go)}
+.gq{font-family:'Oswald';font-size:20px;font-weight:600;letter-spacing:1px;margin-bottom:3px}
+.gs{font-size:12px;color:var(--mu);margin-bottom:16px}
+.opts{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.tc{background:var(--sf);border:2px solid rgba(255,255,255,.07);border-radius:14px;padding:16px;width:360px;max-width:calc(50% - 12px);display:flex;flex-direction:column;align-items:center;transition:.4s}
+.tc:hover{border-color:rgba(255,255,255,.15)}
+.tc.ok{border-color:#00ff88!important;box-shadow:0 0 24px rgba(0,255,136,.15)}
+.tc.ko{border-color:var(--ac)!important;opacity:.4}
+.lb{font-family:'Bebas Neue';font-size:18px;letter-spacing:3px;opacity:.4;margin-bottom:10px}
+.cov{width:200px;height:200px;border-radius:10px;object-fit:cover;box-shadow:0 6px 28px rgba(0,0,0,.5);margin-bottom:12px;transition:.3s}
+.tc:hover .cov{transform:scale(1.02)}
+.ti{text-align:center;margin-bottom:6px}
+.tt2{font-family:'Oswald';font-size:18px;font-weight:700}
+.ar{font-size:12px;color:var(--mu);margin-top:2px}
+.str{font-family:'Bebas Neue';font-size:26px;color:var(--go);height:32px;opacity:0;transition:.4s;transform:scale(.8)}
+.str.vis{opacity:1;transform:scale(1)}
+.vb{padding:10px 28px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--tx);font-family:'Oswald';font-size:14px;letter-spacing:2px;text-transform:uppercase;border-radius:5px;cursor:pointer;transition:.3s;width:100%;margin-top:6px}
+.vb:hover:not(:disabled){background:var(--ac);border-color:var(--ac)}
+.vb:disabled{opacity:.25;cursor:default}
+.fb{margin-top:14px;width:100%;max-width:560px;margin-inline:auto;opacity:0;transition:.5s}
+.fb.vis{opacity:1}
+.ft{font-size:12px;color:var(--go);font-weight:700;text-align:center;line-height:1.5;margin-top:6px}
+#badge{position:fixed;top:14px;right:30px;font-family:'Bebas Neue';font-size:18px;letter-spacing:2px;color:var(--go);opacity:0;transition:.4s;z-index:100}
+#badge.vis{opacity:1}
+.fn{font-family:'Bebas Neue';font-size:90px;line-height:1;background:linear-gradient(135deg,var(--ac),var(--pu),var(--cy));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+@keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.S.on .fi{animation:fu .5s ease forwards}
+.S.on .fi:nth-child(1){animation-delay:.05s;opacity:0}
+.S.on .fi:nth-child(2){animation-delay:.18s;opacity:0}
+.S.on .fi:nth-child(3){animation-delay:.31s;opacity:0}
+.S.on .fi:nth-child(4){animation-delay:.44s;opacity:0}
+.S.on .fi:nth-child(5){animation-delay:.57s;opacity:0}
+.S.on .fi:nth-child(6){animation-delay:.70s;opacity:0}
+
+#s6{justify-content:flex-start;padding-top:14px;padding-bottom:90px}
+
+@media(max-width:800px){
+  .tc{width:100%;max-width:340px}.cov{width:160px;height:160px}
+  .S{padding:30px 16px 80px}.st{gap:24px}
+}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<div id="badge">SCORE: 0 / 0</div>
+
+<!-- 0 TITLE -->
+<div class="S on" id="s0">
+<p class="tg fi">M1 Marketing & Communication</p>
+<h1 class="fi"><span class="r">RAP</span> MUSIC</h1>
+<h2 class="fi" style="font-size:clamp(20px,3vw,36px);margin-top:-4px"><span class="p">Culture</span>, <span class="c">Business</span> & <span class="g">Marketing Power</span></h2>
+<p class="sb fi">From the streets of the Bronx to a $15 billion global industry — how rap became the most influential genre on the planet.</p>
+<div class="st fi">
+<div style="text-align:center"><div class="sn r">#1</div><div class="sl">Most Streamed Genre</div></div>
+<div style="text-align:center"><div class="sn p">$15B+</div><div class="sl">Global Hip-Hop Market</div></div>
+<div style="text-align:center"><div class="sn c">50+</div><div class="sl">Years of Culture</div></div>
+</div>
+</div>
+
+<!-- 1 ORIGINS -->
+<div class="S" id="s1">
+<p class="tg fi">Chapter 01</p>
+<h2 class="fi">The <span class="r">Origins</span> of Rap</h2>
+<p class="sb fi">Rap was born in the 1970s in the Bronx, New York — a voice for communities that had none in mainstream media.</p>
+<div class="tl fi">
+<div class="te"><div class="ty">1973 — The Birth</div><div class="td"><b>DJ Kool Herc</b> throws a party in the Bronx, isolating drum breaks and creating the foundation of hip-hop. MCing, DJing, breakdancing and graffiti become the 4 pillars.</div></div>
+<div class="te"><div class="ty">1979 — First Hit</div><div class="td"><b>Sugarhill Gang — "Rapper's Delight"</b> becomes the first rap single to reach the Top 40. The music industry takes notice.</div></div>
+<div class="te"><div class="ty">1988 — Golden Age</div><div class="td"><b>N.W.A., Public Enemy, Run-DMC, Rakim</b> — rap becomes a tool of protest, storytelling and artistic innovation. East Coast vs West Coast rivalry emerges.</div></div>
+<div class="te"><div class="ty">2000s — Mainstream Takeover</div><div class="td"><b>Jay-Z, Eminem, Kanye West, 50 Cent</b> make rap the dominant force in popular music. Artists become entrepreneurs and moguls.</div></div>
+<div class="te"><div class="ty">2010s–Now — Streaming Era</div><div class="td"><b>Drake, Kendrick, Travis Scott, Post Malone</b> — rap dominates Spotify, TikTok & social media. Sub-genres explode: trap, drill, emo rap, Afro-rap.</div></div>
+</div>
+</div>
+
+<!-- 2 CULTURE -->
+<div class="S" id="s2">
+<p class="tg fi">Chapter 02</p>
+<h2 class="fi">Rap as a <span class="p">Global Culture</span></h2>
+<p class="sb fi">Rap is far more than music — it's a cultural engine that shapes fashion, language, identity and social movements worldwide.</p>
+<div class="eg fi">
+<div class="ex"><div class="en">👟 Fashion & Lifestyle</div><div class="ed">From Run-DMC x Adidas (1986) to Kanye's Yeezy empire and Travis Scott x Nike — rap artists define global fashion trends and drive billions in sales.</div></div>
+<div class="ex"><div class="en">💬 Language & Slang</div><div class="ed">"Drip", "flex", "lit", "slay", "no cap" — rap creates the vocabulary that Gen Z and brands adopt worldwide. It shapes how an entire generation communicates.</div></div>
+<div class="ex"><div class="en">✊ Social Voice</div><div class="ed">From Public Enemy to Kendrick Lamar's "Alright" — rap is a platform for social justice, racial identity and political commentary that reaches millions.</div></div>
+<div class="ex"><div class="en">🌍 Global Reach</div><div class="ed">French rap (#2 market globally), UK drill, K-hip-hop, Afrobeats fusion — every country now has its own rap scene influenced by American hip-hop.</div></div>
+</div>
+</div>
+
+<!-- 3 BUSINESS -->
+<div class="S" id="s3">
+<p class="tg fi">Chapter 03</p>
+<h2 class="fi">The <span class="c">Business</span> of Rap</h2>
+<p class="sb fi">Rap artists aren't just musicians — they're brands, entrepreneurs and media moguls.</p>
+<div class="row fi">
+<div class="cd"><div class="ci">💰</div><div class="ct">Artist as Brand</div><div class="cx">Jay-Z (net worth $2.5B), Rihanna, Kanye, Dr. Dre — rappers build empires in fashion, tech, alcohol & media far beyond music.</div></div>
+<div class="cd"><div class="ci">📈</div><div class="ct">Streaming Dominance</div><div class="cx">Rap accounts for ~30% of all streams on Spotify. Drake alone has 75+ billion streams. The genre drives platform growth.</div></div>
+<div class="cd"><div class="ci">🏷️</div><div class="ct">Brand Partnerships</div><div class="cx">Travis Scott x McDonald's ($20M), Drake x Nike NOCTA, Megan x Popeyes — rap collabs generate massive ROI for brands.</div></div>
+<div class="cd"><div class="ci">📱</div><div class="ct">Social Media Power</div><div class="cx">Rap dominates TikTok sounds, Instagram culture and YouTube views. A viral rap song can generate billions of impressions in days.</div></div>
+</div>
+</div>
+
+<!-- 4 MARKETING -->
+<div class="S" id="s4">
+<p class="tg fi">Chapter 04</p>
+<h2 class="fi">Rap & <span class="g">Marketing</span></h2>
+<p class="sb fi">What marketers can learn from hip-hop's playbook.</p>
+<div class="eg fi">
+<div class="ex"><div class="en">🎯 Authenticity First</div><div class="ed">Rap audiences reject anything fake. Brands that succeed in hip-hop culture stay genuine — forced collabs backfire instantly. Lesson: authenticity > budget.</div></div>
+<div class="ex"><div class="en">🔥 Scarcity & Hype</div><div class="ed">Limited drops (Yeezy, Supreme), surprise album releases (Beyoncé learned from Jay-Z) — rap invented hype marketing before "drop culture" had a name.</div></div>
+<div class="ex"><div class="en">🤝 Community Building</div><div class="ed">From street teams to Discord servers — rap artists build fiercely loyal fanbases through direct connection. Brands now copy this "community-first" model.</div></div>
+<div class="ex"><div class="en">🎬 Storytelling & Image</div><div class="ed">Every great rapper has a narrative arc: the come-up, the struggle, the triumph. This storytelling framework is pure brand strategy — applied to a human being.</div></div>
+</div>
+</div>
+
+<!-- 5 GAME INTRO -->
+<div class="S" id="s5">
+<p class="tg fi">Interactive Game</p>
+<h2 class="fi">🎧 <span class="r">STREAM</span> <span class="p">WARS</span> <span class="c">CHALLENGE</span></h2>
+<p class="sb fi">Two rap tracks face off. You see the <strong style="color:#fff">album cover, artist & title</strong>. Vote: which one has the <strong style="color:var(--go)">most Spotify streams</strong>?</p>
+<div class="row fi">
+<div class="cd"><div class="ci">👀</div><div class="ct">Step 1 — Look</div><div class="cx">Check the album cover, artist name and track title for each song.</div></div>
+<div class="cd"><div class="ci">🗳️</div><div class="ct">Step 2 — Vote</div><div class="cx">Which song has MORE streams? Trust your gut!</div></div>
+<div class="cd"><div class="ci">🏆</div><div class="ct">Step 3 — Reveal</div><div class="cx">See the real Spotify numbers and discover what drives streaming success.</div></div>
+</div>
+</div>
+
+<!-- 6 GAME -->
+<div class="S" id="s6">
+<div class="gm">
+<div class="dots" id="dots"></div>
+<div class="gq" id="gQ"></div>
+<div class="gs">Which track has MORE Spotify streams? Vote below!</div>
+<div class="opts">
+<div class="tc" id="cA">
+<div class="lb">A</div>
+<img class="cov" id="covA" src="" alt="">
+<div class="ti"><div class="tt2" id="tA"></div><div class="ar" id="aA"></div></div>
+<div class="str" id="sA"></div>
+<button class="vb" id="bA">Vote A</button>
+</div>
+<div class="tc" id="cB">
+<div class="lb">B</div>
+<img class="cov" id="covB" src="" alt="">
+<div class="ti"><div class="tt2" id="tB"></div><div class="ar" id="aB"></div></div>
+<div class="str" id="sB"></div>
+<button class="vb" id="bB">Vote B</button>
+</div>
+</div>
+<div class="fb" id="fb"><div class="ft" id="ftxt"></div></div>
+</div>
+</div>
+
+<!-- 7 RESULTS -->
+<div class="S" id="s7">
+<p class="tg fi">Game Over</p>
+<h2 class="fi">Your <span class="r">Score</span></h2>
+<div class="fn fi" id="fNum">0/5</div>
+<p class="sb fi" id="fMsg"></p>
+</div>
+
+<!-- 8 TAKEAWAYS -->
+<div class="S" id="s8">
+<p class="tg fi">Key Takeaways</p>
+<h2 class="fi">What to <span class="c">Remember</span></h2>
+<div class="tk fi"><div class="tn">01</div><div class="tt"><b>Rap is the dominant cultural force of our era.</b> It shapes music, fashion, language and social movements across the globe.</div></div>
+<div class="tk fi"><div class="tn">02</div><div class="tt"><b>Artists are brands.</b> The most successful rappers build empires beyond music — fashion, tech, food, media — using their personal narrative as a brand story.</div></div>
+<div class="tk fi"><div class="tn">03</div><div class="tt"><b>Authenticity is everything.</b> Rap audiences are the most brand-aware consumers. Fake partnerships get destroyed. Real ones create massive ROI.</div></div>
+<div class="tk fi"><div class="tn">04</div><div class="tt"><b>Streaming changed the rules.</b> Rap was the first genre to fully master the streaming economy — playlists, virality, and direct-to-fan marketing.</div></div>
+<div class="tk fi"><div class="tn">05</div><div class="tt"><b>For marketers:</b> Study rap's playbook — storytelling, community, scarcity, cultural relevance. It's the blueprint for modern brand strategy.</div></div>
+</div>
+
+<!-- 9 END -->
+<div class="S" id="s9">
+<p class="tg fi">That's a Wrap</p>
+<h1 class="fi"><span class="r">THANK</span> <span class="c">YOU</span></h1>
+<p class="sb fi">Any questions? Let's discuss. 🎤</p>
+</div>
+
+<nav>
+<button id="pB" disabled>← Prev</button>
+<div id="cnt">01 / 10</div>
+<button id="nB">Next →</button>
+</nav>
+
+<script>
+var I="https://i.scdn.co/image/",R=[
+{q:"Round 1 — Which has MORE Spotify streams?",
+ a:{t:"One Dance",ar:"Drake ft. Wizkid & Kyla",cv:I+"ab67616d0000b2739416ed64daf84936d89e671c",s:"4.04 Billion"},
+ b:{t:"goosebumps",ar:"Travis Scott ft. Kendrick Lamar",cv:I+"ab67616d0000b2738752a7355996e64709247c53",s:"3.06 Billion"},
+ w:"A",x:"Drake — One Dance (4.04B) > goosebumps (3.06B). Drake's dancehall crossover reached a truly global audience."},
+{q:"Round 2 — Which has MORE Spotify streams?",
+ a:{t:"HUMBLE.",ar:"Kendrick Lamar",cv:I+"ab67616d0000b2738b52c6b9bc4e43d873869699",s:"2.85 Billion"},
+ b:{t:"rockstar",ar:"Post Malone ft. 21 Savage",cv:I+"ab67616d0000b273b1c4b76e23414c9f20242268",s:"3.33 Billion"},
+ w:"B",x:"rockstar (3.33B) > HUMBLE. (2.85B). Post Malone's genre-blending style appeals way beyond core rap fans."},
+{q:"Round 3 — Which has MORE Spotify streams?",
+ a:{t:"Without Me",ar:"Eminem",cv:I+"ab67616d0000b2736ca5c90113b30c3c43ffb8f4",s:"2.96 Billion"},
+ b:{t:"Lucid Dreams",ar:"Juice WRLD",cv:I+"ab67616d0000b273466028b14d6d0023a862e50d",s:"3.07 Billion"},
+ w:"B",x:"Lucid Dreams (3.07B) > Without Me (2.96B). Emo-rap + Gen Z streaming habits = new generation dominance."},
+{q:"Round 4 — Which has MORE Spotify streams?",
+ a:{t:"God's Plan",ar:"Drake",cv:I+"ab67616d0000b273f907de96b9a4fbc04accc0d5",s:"2.99 Billion"},
+ b:{t:"No Role Modelz",ar:"J. Cole",cv:I+"ab67616d0000b273c6e0948bbb0681ff29cdbae8",s:"2.82 Billion"},
+ w:"A",x:"God's Plan (2.99B) > No Role Modelz (2.82B). Drake mastered viral marketing — the music video giving away $1M was pure genius."},
+{q:"Round 5 — Which has MORE Spotify streams?",
+ a:{t:"Sunflower",ar:"Post Malone & Swae Lee",cv:I+"ab67616d0000b273f31fac08d86a45fa14efa283",s:"4.12 Billion"},
+ b:{t:"All The Stars",ar:"Kendrick Lamar & SZA",cv:I+"ab67616d0000b273c027ad28821777b00dcaa888",s:"2.85 Billion"},
+ w:"A",x:"Sunflower (4.12B) nearly doubles All The Stars (2.85B). Movie syncs (Spider-Verse) give songs a second life for years."}
+];
+
+var cr=0,sc=0,vt=false,cur=0,tot=10;
+
+function load(){
+  if(cr>=R.length)return;vt=false;var r=R[cr];
+  document.getElementById('gQ').textContent=r.q;
+  document.getElementById('covA').src=r.a.cv;document.getElementById('tA').textContent=r.a.t;document.getElementById('aA').textContent=r.a.ar;
+  document.getElementById('covB').src=r.b.cv;document.getElementById('tB').textContent=r.b.t;document.getElementById('aB').textContent=r.b.ar;
+  document.getElementById('cA').className='tc';document.getElementById('cB').className='tc';
+  document.getElementById('sA').className='str';document.getElementById('sB').className='str';
+  document.getElementById('sA').textContent='';document.getElementById('sB').textContent='';
+  document.getElementById('bA').disabled=false;document.getElementById('bB').disabled=false;
+  document.getElementById('fb').className='fb';document.getElementById('ftxt').textContent='';
+  document.getElementById('s6').scrollTop=0;
+  var d=document.getElementById('dots');d.innerHTML='';
+  for(var i=0;i<R.length;i++){var e=document.createElement('div');e.className='dot'+(i<cr?' dn':'')+(i===cr?' on':'');d.appendChild(e);}
+}
+
+function vote(p){
+  if(vt)return;vt=true;var r=R[cr],ok=p===r.w;if(ok)sc++;
+  document.getElementById('bA').disabled=true;document.getElementById('bB').disabled=true;
+  document.getElementById('sA').textContent=r.a.s;document.getElementById('sB').textContent=r.b.s;
+  document.getElementById('sA').className='str vis';document.getElementById('sB').className='str vis';
+  document.getElementById('c'+r.w).classList.add('ok');document.getElementById('c'+(r.w==='A'?'B':'A')).classList.add('ko');
+  document.getElementById('fb').className='fb vis';
+  document.getElementById('ftxt').textContent=(ok?'\u2705 Correct! ':'\u274C Wrong! ')+r.x;
+  document.getElementById('badge').textContent='SCORE: '+sc+' / '+(cr+1);
+  var ds=document.querySelectorAll('.dot');if(ds[cr])ds[cr].className='dot dn';
+  setTimeout(function(){document.getElementById('fb').scrollIntoView({behavior:'smooth',block:'nearest'});},200);
+}
+
+document.getElementById('bA').onclick=function(){vote('A');};
+document.getElementById('bB').onclick=function(){vote('B');};
+
+function go(d){
+  if(cur===6&&d===1){if(!vt)return;if(cr<R.length-1){cr++;load();return;}}
+  var n=cur+d;if(n<0||n>=tot)return;
+  for(var i=0;i<tot;i++)document.getElementById('s'+i).classList.remove('on');
+  cur=n;document.getElementById('s'+cur).classList.add('on');
+  document.getElementById('pB').disabled=cur===0;
+  document.getElementById('nB').disabled=cur===tot-1;
+  document.getElementById('cnt').textContent=String(cur+1).padStart(2,'0')+' / '+String(tot).padStart(2,'0');
+  document.getElementById('bar').style.width=((cur+1)/tot*100)+'%';
+  if(cur===6){document.getElementById('badge').classList.add('vis');cr=0;sc=0;document.getElementById('badge').textContent='SCORE: 0 / 0';load();}
+  else document.getElementById('badge').classList.remove('vis');
+  if(cur===7){document.getElementById('fNum').textContent=sc+'/'+R.length;
+    var m=["Keep listening! \uD83D\uDCAA","Getting there! \uD83C\uDFB5","Not bad! \uD83D\uDD25","Solid! \uD83C\uDFA7","Great! \uD83C\uDFC6","PERFECT! \uD83D\uDC51"];
+    document.getElementById('fMsg').textContent=m[sc]||m[5];}
+}
+
+document.getElementById('pB').onclick=function(){go(-1);};
+document.getElementById('nB').onclick=function(){go(1);};
+document.addEventListener('keydown',function(e){
+  if(e.key==='ArrowRight'||e.key===' '){e.preventDefault();go(1);}
+  if(e.key==='ArrowLeft'){e.preventDefault();go(-1);}
+});
+document.getElementById('bar').style.width=(1/tot*100)+'%';
+</script>
+</body>
+</html>
