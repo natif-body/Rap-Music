@@ -56,6 +56,36 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 .tn{font-family:'Bebas Neue';font-size:28px;color:var(--pu);line-height:1}
 .tt{font-size:13px;line-height:1.7}.tt b{color:var(--cy)}
 
+/* GAME */
+.gm{width:100%;max-width:940px;text-align:center}
+.dots{display:flex;gap:7px;justify-content:center;margin-bottom:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.1);transition:.3s}
+.dot.on{background:var(--ac)}.dot.dn{background:var(--go)}
+.gq{font-family:'Oswald';font-size:20px;font-weight:600;letter-spacing:1px;margin-bottom:3px}
+.gs{font-size:12px;color:var(--mu);margin-bottom:16px}
+.opts{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.tc{background:var(--sf);border:2px solid rgba(255,255,255,.07);border-radius:14px;padding:16px;width:360px;max-width:calc(50% - 12px);display:flex;flex-direction:column;align-items:center;transition:.4s}
+.tc:hover{border-color:rgba(255,255,255,.15)}
+.tc.ok{border-color:#00ff88!important;box-shadow:0 0 24px rgba(0,255,136,.15)}
+.tc.ko{border-color:var(--ac)!important;opacity:.4}
+.lb{font-family:'Bebas Neue';font-size:18px;letter-spacing:3px;opacity:.4;margin-bottom:10px}
+.cov{width:200px;height:200px;border-radius:10px;object-fit:cover;box-shadow:0 6px 28px rgba(0,0,0,.5);margin-bottom:12px;transition:.3s}
+.tc:hover .cov{transform:scale(1.02)}
+.ti{text-align:center;margin-bottom:6px}
+.tt2{font-family:'Oswald';font-size:18px;font-weight:700}
+.ar{font-size:12px;color:var(--mu);margin-top:2px}
+.str{font-family:'Bebas Neue';font-size:26px;color:var(--go);height:32px;opacity:0;transition:.4s;transform:scale(.8)}
+.str.vis{opacity:1;transform:scale(1)}
+.vb{padding:10px 28px;border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--tx);font-family:'Oswald';font-size:14px;letter-spacing:2px;text-transform:uppercase;border-radius:5px;cursor:pointer;transition:.3s;width:100%;margin-top:6px}
+.vb:hover:not(:disabled){background:var(--ac);border-color:var(--ac)}
+.vb:disabled{opacity:.25;cursor:default}
+.fb{margin-top:14px;width:100%;max-width:560px;margin-inline:auto;opacity:0;transition:.5s}
+.fb.vis{opacity:1}
+.ft{font-size:12px;color:var(--go);font-weight:700;text-align:center;line-height:1.5;margin-top:6px}
+#badge{position:fixed;top:14px;right:30px;font-family:'Bebas Neue';font-size:18px;letter-spacing:2px;color:var(--go);opacity:0;transition:.4s;z-index:100}
+#badge.vis{opacity:1}
+.fn{font-family:'Bebas Neue';font-size:90px;line-height:1;background:linear-gradient(135deg,var(--ac),var(--pu),var(--cy));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
 /* TOP 5 */
 .top-list{display:flex;flex-direction:column;gap:14px;max-width:720px;width:100%;margin-top:24px}
 .top-item{display:flex;align-items:center;gap:18px;background:var(--sf);border-radius:14px;padding:14px 20px;border:1px solid rgba(255,255,255,.05);transition:.4s}
@@ -77,8 +107,6 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 .top-item:nth-child(4) .top-streams{color:var(--pu)}
 .top-item:nth-child(5) .top-streams{color:#00ff88}
 
-.fn{font-family:'Bebas Neue';font-size:90px;line-height:1;background:linear-gradient(135deg,var(--ac),var(--pu),var(--cy));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-
 @keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 .S.on .fi{animation:fu .5s ease forwards}
 .S.on .fi:nth-child(1){animation-delay:.05s;opacity:0}
@@ -90,9 +118,11 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 .S.on .fi:nth-child(7){animation-delay:.83s;opacity:0}
 .S.on .fi:nth-child(8){animation-delay:.96s;opacity:0}
 
-#s5,#s6,#s7{justify-content:flex-start;padding-top:24px;padding-bottom:90px}
+#s6{justify-content:flex-start;padding-top:14px;padding-bottom:90px}
+#s8,#s9,#s10{justify-content:flex-start;padding-top:24px;padding-bottom:90px}
 
 @media(max-width:800px){
+  .tc{width:100%;max-width:340px}.cov{width:160px;height:160px}
   .S{padding:30px 16px 80px}.st{gap:24px}
   .top-item{gap:12px;padding:12px 14px}
   .top-rank{font-size:32px;min-width:36px}
@@ -104,6 +134,7 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 </head>
 <body>
 <div id="bar"></div>
+<div id="badge">SCORE: 0 / 0</div>
 
 <!-- 0 TITLE -->
 <div class="S on" id="s0">
@@ -171,8 +202,54 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 </div>
 </div>
 
-<!-- 5 TAKEAWAYS -->
+<!-- 5 GAME INTRO -->
 <div class="S" id="s5">
+<p class="tg fi">Interactive Game</p>
+<h2 class="fi">🎧 <span class="r">STREAM</span> <span class="p">WARS</span> <span class="c">CHALLENGE</span></h2>
+<p class="sb fi">Two rap tracks face off. You see the <strong style="color:#fff">album cover, artist & title</strong>. Vote: which one has the <strong style="color:var(--go)">most Spotify streams</strong>?</p>
+<div class="row fi">
+<div class="cd"><div class="ci">👀</div><div class="ct">Step 1 — Look</div><div class="cx">Check the album cover, artist name and track title for each song.</div></div>
+<div class="cd"><div class="ci">🗳️</div><div class="ct">Step 2 — Vote</div><div class="cx">Which song has MORE streams? Trust your gut!</div></div>
+<div class="cd"><div class="ci">🏆</div><div class="ct">Step 3 — Reveal</div><div class="cx">See the real Spotify numbers and discover what drives streaming success.</div></div>
+</div>
+</div>
+
+<!-- 6 GAME -->
+<div class="S" id="s6">
+<div class="gm">
+<div class="dots" id="dots"></div>
+<div class="gq" id="gQ"></div>
+<div class="gs">Which track has MORE Spotify streams? Vote below!</div>
+<div class="opts">
+<div class="tc" id="cA">
+<div class="lb">A</div>
+<img class="cov" id="covA" src="" alt="">
+<div class="ti"><div class="tt2" id="tA"></div><div class="ar" id="aA"></div></div>
+<div class="str" id="sA"></div>
+<button class="vb" id="bA">Vote A</button>
+</div>
+<div class="tc" id="cB">
+<div class="lb">B</div>
+<img class="cov" id="covB" src="" alt="">
+<div class="ti"><div class="tt2" id="tB"></div><div class="ar" id="aB"></div></div>
+<div class="str" id="sB"></div>
+<button class="vb" id="bB">Vote B</button>
+</div>
+</div>
+<div class="fb" id="fb"><div class="ft" id="ftxt"></div></div>
+</div>
+</div>
+
+<!-- 7 RESULTS -->
+<div class="S" id="s7">
+<p class="tg fi">Game Over</p>
+<h2 class="fi">Your <span class="r">Score</span></h2>
+<div class="fn fi" id="fNum">0/5</div>
+<p class="sb fi" id="fMsg"></p>
+</div>
+
+<!-- 8 TAKEAWAYS -->
+<div class="S" id="s8">
 <p class="tg fi">Key Takeaways</p>
 <h2 class="fi">What to <span class="c">Remember</span></h2>
 <div class="tk fi"><div class="tn">01</div><div class="tt"><b>Rap is the dominant cultural force of our era.</b> It shapes music, fashion, language and social movements across the globe.</div></div>
@@ -182,8 +259,8 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 <div class="tk fi"><div class="tn">05</div><div class="tt"><b>For marketers:</b> Study rap's playbook — storytelling, community, scarcity, cultural relevance. It's the blueprint for modern brand strategy.</div></div>
 </div>
 
-<!-- 6 TOP 5 SONGS -->
-<div class="S" id="s6">
+<!-- 9 TOP 5 SONGS -->
+<div class="S" id="s9">
 <p class="tg fi">Top Streaming</p>
 <h2 class="fi">Top 5 <span class="r">Sons</span> Rap les + <span class="g">Stream</span></h2>
 <p class="sb fi">Les titres rap les plus ecoutés de tous les temps sur Spotify.</p>
@@ -221,8 +298,8 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 </div>
 </div>
 
-<!-- 7 TOP 5 ARTISTS -->
-<div class="S" id="s7">
+<!-- 10 TOP 5 ARTISTS -->
+<div class="S" id="s10">
 <p class="tg fi">Top Artists</p>
 <h2 class="fi">Top 5 <span class="p">Artistes</span> Rap les + <span class="c">Stream</span></h2>
 <p class="sb fi">Les artistes rap les plus ecoutés de tous les temps sur Spotify.</p>
@@ -260,8 +337,8 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 </div>
 </div>
 
-<!-- 8 END -->
-<div class="S" id="s8">
+<!-- 11 END -->
+<div class="S" id="s11">
 <p class="tg fi">That's a Wrap</p>
 <h1 class="fi"><span class="r">THANK</span> <span class="c">YOU</span></h1>
 <p class="sb fi">Any questions? Let's discuss.</p>
@@ -269,14 +346,69 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 
 <nav>
 <button id="pB" disabled>&larr; Prev</button>
-<div id="cnt">01 / 09</div>
+<div id="cnt">01 / 12</div>
 <button id="nB">Next &rarr;</button>
 </nav>
 
 <script>
-var cur=0,tot=9;
+var R=[
+{q:"Round 1 — Which has MORE Spotify streams?",
+ a:{t:"One Dance",ar:"Drake ft. Wizkid & Kyla",cv:"cover-one-dance.jpg",s:"4.04 Billion"},
+ b:{t:"goosebumps",ar:"Travis Scott ft. Kendrick Lamar",cv:"cover-goosebumps.jpg",s:"3.06 Billion"},
+ w:"A",x:"Drake — One Dance (4.04B) > goosebumps (3.06B). Drake's dancehall crossover reached a truly global audience."},
+{q:"Round 2 — Which has MORE Spotify streams?",
+ a:{t:"HUMBLE.",ar:"Kendrick Lamar",cv:"cover-humble.jpg",s:"2.85 Billion"},
+ b:{t:"rockstar",ar:"Post Malone ft. 21 Savage",cv:"cover-rockstar.jpg",s:"3.33 Billion"},
+ w:"B",x:"rockstar (3.33B) > HUMBLE. (2.85B). Post Malone's genre-blending style appeals way beyond core rap fans."},
+{q:"Round 3 — Which has MORE Spotify streams?",
+ a:{t:"Without Me",ar:"Eminem",cv:"cover-without-me.jpg",s:"2.96 Billion"},
+ b:{t:"Lucid Dreams",ar:"Juice WRLD",cv:"cover-lucid-dreams.jpg",s:"3.07 Billion"},
+ w:"B",x:"Lucid Dreams (3.07B) > Without Me (2.96B). Emo-rap + Gen Z streaming habits = new generation dominance."},
+{q:"Round 4 — Which has MORE Spotify streams?",
+ a:{t:"God's Plan",ar:"Drake",cv:"cover-gods-plan.jpg",s:"2.99 Billion"},
+ b:{t:"No Role Modelz",ar:"J. Cole",cv:"cover-no-role-modelz.jpg",s:"2.82 Billion"},
+ w:"A",x:"God's Plan (2.99B) > No Role Modelz (2.82B). Drake mastered viral marketing — the music video giving away $1M was pure genius."},
+{q:"Round 5 — Which has MORE Spotify streams?",
+ a:{t:"Sunflower",ar:"Post Malone & Swae Lee",cv:"cover-sunflower.jpg",s:"4.12 Billion"},
+ b:{t:"All The Stars",ar:"Kendrick Lamar & SZA",cv:"cover-all-the-stars.jpg",s:"2.85 Billion"},
+ w:"A",x:"Sunflower (4.12B) nearly doubles All The Stars (2.85B). Movie syncs (Spider-Verse) give songs a second life for years."}
+];
+
+var cr=0,sc=0,vt=false,cur=0,tot=12;
+
+function load(){
+  if(cr>=R.length)return;vt=false;var r=R[cr];
+  document.getElementById('gQ').textContent=r.q;
+  document.getElementById('covA').src=r.a.cv;document.getElementById('tA').textContent=r.a.t;document.getElementById('aA').textContent=r.a.ar;
+  document.getElementById('covB').src=r.b.cv;document.getElementById('tB').textContent=r.b.t;document.getElementById('aB').textContent=r.b.ar;
+  document.getElementById('cA').className='tc';document.getElementById('cB').className='tc';
+  document.getElementById('sA').className='str';document.getElementById('sB').className='str';
+  document.getElementById('sA').textContent='';document.getElementById('sB').textContent='';
+  document.getElementById('bA').disabled=false;document.getElementById('bB').disabled=false;
+  document.getElementById('fb').className='fb';document.getElementById('ftxt').textContent='';
+  document.getElementById('s6').scrollTop=0;
+  var d=document.getElementById('dots');d.innerHTML='';
+  for(var i=0;i<R.length;i++){var e=document.createElement('div');e.className='dot'+(i<cr?' dn':'')+(i===cr?' on':'');d.appendChild(e);}
+}
+
+function vote(p){
+  if(vt)return;vt=true;var r=R[cr],ok=p===r.w;if(ok)sc++;
+  document.getElementById('bA').disabled=true;document.getElementById('bB').disabled=true;
+  document.getElementById('sA').textContent=r.a.s;document.getElementById('sB').textContent=r.b.s;
+  document.getElementById('sA').className='str vis';document.getElementById('sB').className='str vis';
+  document.getElementById('c'+r.w).classList.add('ok');document.getElementById('c'+(r.w==='A'?'B':'A')).classList.add('ko');
+  document.getElementById('fb').className='fb vis';
+  document.getElementById('ftxt').textContent=(ok?'\u2705 Correct! ':'\u274C Wrong! ')+r.x;
+  document.getElementById('badge').textContent='SCORE: '+sc+' / '+(cr+1);
+  var ds=document.querySelectorAll('.dot');if(ds[cr])ds[cr].className='dot dn';
+  setTimeout(function(){document.getElementById('fb').scrollIntoView({behavior:'smooth',block:'nearest'});},200);
+}
+
+document.getElementById('bA').onclick=function(){vote('A');};
+document.getElementById('bB').onclick=function(){vote('B');};
 
 function go(d){
+  if(cur===6&&d===1){if(!vt)return;if(cr<R.length-1){cr++;load();return;}}
   var n=cur+d;if(n<0||n>=tot)return;
   for(var i=0;i<tot;i++)document.getElementById('s'+i).classList.remove('on');
   cur=n;document.getElementById('s'+cur).classList.add('on');
@@ -284,6 +416,11 @@ function go(d){
   document.getElementById('nB').disabled=cur===tot-1;
   document.getElementById('cnt').textContent=String(cur+1).padStart(2,'0')+' / '+String(tot).padStart(2,'0');
   document.getElementById('bar').style.width=((cur+1)/tot*100)+'%';
+  if(cur===6){document.getElementById('badge').classList.add('vis');cr=0;sc=0;document.getElementById('badge').textContent='SCORE: 0 / 0';load();}
+  else document.getElementById('badge').classList.remove('vis');
+  if(cur===7){document.getElementById('fNum').textContent=sc+'/'+R.length;
+    var m=["Keep listening! \uD83D\uDCAA","Getting there! \uD83C\uDFB5","Not bad! \uD83D\uDD25","Solid! \uD83C\uDFA7","Great! \uD83C\uDFC6","PERFECT! \uD83D\uDC51"];
+    document.getElementById('fMsg').textContent=m[sc]||m[5];}
 }
 
 document.getElementById('pB').onclick=function(){go(-1);};
