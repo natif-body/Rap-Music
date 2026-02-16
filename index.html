@@ -86,6 +86,27 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 #badge.vis{opacity:1}
 .fn{font-family:'Bebas Neue';font-size:90px;line-height:1;background:linear-gradient(135deg,var(--ac),var(--pu),var(--cy));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
+/* TOP 5 */
+.top-list{display:flex;flex-direction:column;gap:14px;max-width:720px;width:100%;margin-top:24px}
+.top-item{display:flex;align-items:center;gap:18px;background:var(--sf);border-radius:14px;padding:14px 20px;border:1px solid rgba(255,255,255,.05);transition:.4s}
+.top-item:hover{border-color:rgba(255,255,255,.12);transform:translateX(6px)}
+.top-rank{font-family:'Bebas Neue';font-size:42px;min-width:48px;text-align:center;line-height:1}
+.top-item:nth-child(1) .top-rank{color:var(--go)}
+.top-item:nth-child(2) .top-rank{color:#c0c0c0}
+.top-item:nth-child(3) .top-rank{color:#cd7f32}
+.top-item:nth-child(4) .top-rank{color:var(--pu)}
+.top-item:nth-child(5) .top-rank{color:var(--cy)}
+.top-cover{width:72px;height:72px;border-radius:10px;object-fit:cover;box-shadow:0 4px 20px rgba(0,0,0,.4);flex-shrink:0}
+.top-info{flex:1;min-width:0}
+.top-title{font-family:'Oswald';font-size:17px;font-weight:700;letter-spacing:.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.top-artist{font-size:12px;color:var(--mu);margin-top:3px}
+.top-streams{font-family:'Bebas Neue';font-size:22px;letter-spacing:1px;white-space:nowrap;flex-shrink:0}
+.top-item:nth-child(1) .top-streams{color:var(--go)}
+.top-item:nth-child(2) .top-streams{color:var(--ac)}
+.top-item:nth-child(3) .top-streams{color:var(--cy)}
+.top-item:nth-child(4) .top-streams{color:var(--pu)}
+.top-item:nth-child(5) .top-streams{color:#00ff88}
+
 @keyframes fu{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 .S.on .fi{animation:fu .5s ease forwards}
 .S.on .fi:nth-child(1){animation-delay:.05s;opacity:0}
@@ -94,12 +115,20 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 .S.on .fi:nth-child(4){animation-delay:.44s;opacity:0}
 .S.on .fi:nth-child(5){animation-delay:.57s;opacity:0}
 .S.on .fi:nth-child(6){animation-delay:.70s;opacity:0}
+.S.on .fi:nth-child(7){animation-delay:.83s;opacity:0}
+.S.on .fi:nth-child(8){animation-delay:.96s;opacity:0}
 
 #s6{justify-content:flex-start;padding-top:14px;padding-bottom:90px}
+#s8,#s9,#s10{justify-content:flex-start;padding-top:24px;padding-bottom:90px}
 
 @media(max-width:800px){
   .tc{width:100%;max-width:340px}.cov{width:160px;height:160px}
   .S{padding:30px 16px 80px}.st{gap:24px}
+  .top-item{gap:12px;padding:12px 14px}
+  .top-rank{font-size:32px;min-width:36px}
+  .top-cover{width:56px;height:56px;border-radius:8px}
+  .top-title{font-size:14px}
+  .top-streams{font-size:18px}
 }
 </style>
 </head>
@@ -230,44 +259,122 @@ h2{font-family:'Bebas Neue';font-size:clamp(30px,5vw,64px);line-height:1;text-al
 <div class="tk fi"><div class="tn">05</div><div class="tt"><b>For marketers:</b> Study rap's playbook — storytelling, community, scarcity, cultural relevance. It's the blueprint for modern brand strategy.</div></div>
 </div>
 
-<!-- 9 END -->
+<!-- 9 TOP 5 SONGS -->
 <div class="S" id="s9">
+<p class="tg fi">Top Streaming</p>
+<h2 class="fi">Top 5 <span class="r">Sons</span> Rap les + <span class="g">Stream</span></h2>
+<p class="sb fi">Les titres rap les plus ecoutés de tous les temps sur Spotify.</p>
+<div class="top-list fi">
+<div class="top-item">
+  <div class="top-rank">#1</div>
+  <img class="top-cover" src="cover-sunflower.jpg" alt="Sunflower">
+  <div class="top-info"><div class="top-title">Sunflower</div><div class="top-artist">Post Malone & Swae Lee</div></div>
+  <div class="top-streams">4.12B</div>
+</div>
+<div class="top-item">
+  <div class="top-rank">#2</div>
+  <img class="top-cover" src="cover-one-dance.jpg" alt="One Dance">
+  <div class="top-info"><div class="top-title">One Dance</div><div class="top-artist">Drake ft. Wizkid & Kyla</div></div>
+  <div class="top-streams">4.04B</div>
+</div>
+<div class="top-item">
+  <div class="top-rank">#3</div>
+  <img class="top-cover" src="cover-rockstar.jpg" alt="rockstar">
+  <div class="top-info"><div class="top-title">rockstar</div><div class="top-artist">Post Malone ft. 21 Savage</div></div>
+  <div class="top-streams">3.33B</div>
+</div>
+<div class="top-item">
+  <div class="top-rank">#4</div>
+  <img class="top-cover" src="cover-lucid-dreams.jpg" alt="Lucid Dreams">
+  <div class="top-info"><div class="top-title">Lucid Dreams</div><div class="top-artist">Juice WRLD</div></div>
+  <div class="top-streams">3.07B</div>
+</div>
+<div class="top-item">
+  <div class="top-rank">#5</div>
+  <img class="top-cover" src="cover-gods-plan.jpg" alt="God's Plan">
+  <div class="top-info"><div class="top-title">God's Plan</div><div class="top-artist">Drake</div></div>
+  <div class="top-streams">2.99B</div>
+</div>
+</div>
+</div>
+
+<!-- 10 TOP 5 ARTISTS -->
+<div class="S" id="s10">
+<p class="tg fi">Top Artists</p>
+<h2 class="fi">Top 5 <span class="p">Artistes</span> Rap les + <span class="c">Stream</span></h2>
+<p class="sb fi">Les artistes rap les plus ecoutés de tous les temps sur Spotify.</p>
+<div class="top-list fi">
+<div class="top-item">
+  <div class="top-rank">#1</div>
+  <img class="top-cover" src="artist-drake.jpg" alt="Drake">
+  <div class="top-info"><div class="top-title">Drake</div><div class="top-artist">Toronto, Canada</div></div>
+  <div class="top-streams">~80B+</div>
+</div>
+<div class="top-item">
+  <div class="top-rank">#2</div>
+  <img class="top-cover" src="artist-eminem.jpg" alt="Eminem">
+  <div class="top-info"><div class="top-title">Eminem</div><div class="top-artist">Detroit, USA</div></div>
+  <div class="top-streams">~62B+</div>
+</div>
+<div class="top-item">
+  <div class="top-rank">#3</div>
+  <img class="top-cover" src="artist-kanye.jpg" alt="Kanye West">
+  <div class="top-info"><div class="top-title">Kanye West</div><div class="top-artist">Chicago, USA</div></div>
+  <div class="top-streams">~40B+</div>
+</div>
+<div class="top-item">
+  <div class="top-rank">#4</div>
+  <img class="top-cover" src="artist-travis-scott.jpg" alt="Travis Scott">
+  <div class="top-info"><div class="top-title">Travis Scott</div><div class="top-artist">Houston, USA</div></div>
+  <div class="top-streams">~30B+</div>
+</div>
+<div class="top-item">
+  <div class="top-rank">#5</div>
+  <img class="top-cover" src="artist-kendrick.jpg" alt="Kendrick Lamar">
+  <div class="top-info"><div class="top-title">Kendrick Lamar</div><div class="top-artist">Compton, USA</div></div>
+  <div class="top-streams">~28B+</div>
+</div>
+</div>
+</div>
+
+<!-- 11 END -->
+<div class="S" id="s11">
 <p class="tg fi">That's a Wrap</p>
 <h1 class="fi"><span class="r">THANK</span> <span class="c">YOU</span></h1>
-<p class="sb fi">Any questions? Let's discuss. 🎤</p>
+<p class="sb fi">Any questions? Let's discuss.</p>
 </div>
 
 <nav>
-<button id="pB" disabled>← Prev</button>
-<div id="cnt">01 / 10</div>
-<button id="nB">Next →</button>
+<button id="pB" disabled>&larr; Prev</button>
+<div id="cnt">01 / 12</div>
+<button id="nB">Next &rarr;</button>
 </nav>
 
 <script>
-var I="https://i.scdn.co/image/",R=[
+var R=[
 {q:"Round 1 — Which has MORE Spotify streams?",
- a:{t:"One Dance",ar:"Drake ft. Wizkid & Kyla",cv:I+"ab67616d0000b2739416ed64daf84936d89e671c",s:"4.04 Billion"},
- b:{t:"goosebumps",ar:"Travis Scott ft. Kendrick Lamar",cv:I+"ab67616d0000b2738752a7355996e64709247c53",s:"3.06 Billion"},
+ a:{t:"One Dance",ar:"Drake ft. Wizkid & Kyla",cv:"cover-one-dance.jpg",s:"4.04 Billion"},
+ b:{t:"goosebumps",ar:"Travis Scott ft. Kendrick Lamar",cv:"cover-goosebumps.jpg",s:"3.06 Billion"},
  w:"A",x:"Drake — One Dance (4.04B) > goosebumps (3.06B). Drake's dancehall crossover reached a truly global audience."},
 {q:"Round 2 — Which has MORE Spotify streams?",
- a:{t:"HUMBLE.",ar:"Kendrick Lamar",cv:I+"ab67616d0000b2738b52c6b9bc4e43d873869699",s:"2.85 Billion"},
- b:{t:"rockstar",ar:"Post Malone ft. 21 Savage",cv:I+"ab67616d0000b273b1c4b76e23414c9f20242268",s:"3.33 Billion"},
+ a:{t:"HUMBLE.",ar:"Kendrick Lamar",cv:"cover-humble.jpg",s:"2.85 Billion"},
+ b:{t:"rockstar",ar:"Post Malone ft. 21 Savage",cv:"cover-rockstar.jpg",s:"3.33 Billion"},
  w:"B",x:"rockstar (3.33B) > HUMBLE. (2.85B). Post Malone's genre-blending style appeals way beyond core rap fans."},
 {q:"Round 3 — Which has MORE Spotify streams?",
- a:{t:"Without Me",ar:"Eminem",cv:I+"ab67616d0000b2736ca5c90113b30c3c43ffb8f4",s:"2.96 Billion"},
- b:{t:"Lucid Dreams",ar:"Juice WRLD",cv:I+"ab67616d0000b273466028b14d6d0023a862e50d",s:"3.07 Billion"},
+ a:{t:"Without Me",ar:"Eminem",cv:"cover-without-me.jpg",s:"2.96 Billion"},
+ b:{t:"Lucid Dreams",ar:"Juice WRLD",cv:"cover-lucid-dreams.jpg",s:"3.07 Billion"},
  w:"B",x:"Lucid Dreams (3.07B) > Without Me (2.96B). Emo-rap + Gen Z streaming habits = new generation dominance."},
 {q:"Round 4 — Which has MORE Spotify streams?",
- a:{t:"God's Plan",ar:"Drake",cv:I+"ab67616d0000b273f907de96b9a4fbc04accc0d5",s:"2.99 Billion"},
- b:{t:"No Role Modelz",ar:"J. Cole",cv:I+"ab67616d0000b273c6e0948bbb0681ff29cdbae8",s:"2.82 Billion"},
+ a:{t:"God's Plan",ar:"Drake",cv:"cover-gods-plan.jpg",s:"2.99 Billion"},
+ b:{t:"No Role Modelz",ar:"J. Cole",cv:"cover-no-role-modelz.jpg",s:"2.82 Billion"},
  w:"A",x:"God's Plan (2.99B) > No Role Modelz (2.82B). Drake mastered viral marketing — the music video giving away $1M was pure genius."},
 {q:"Round 5 — Which has MORE Spotify streams?",
- a:{t:"Sunflower",ar:"Post Malone & Swae Lee",cv:I+"ab67616d0000b273f31fac08d86a45fa14efa283",s:"4.12 Billion"},
- b:{t:"All The Stars",ar:"Kendrick Lamar & SZA",cv:I+"ab67616d0000b273c027ad28821777b00dcaa888",s:"2.85 Billion"},
+ a:{t:"Sunflower",ar:"Post Malone & Swae Lee",cv:"cover-sunflower.jpg",s:"4.12 Billion"},
+ b:{t:"All The Stars",ar:"Kendrick Lamar & SZA",cv:"cover-all-the-stars.jpg",s:"2.85 Billion"},
  w:"A",x:"Sunflower (4.12B) nearly doubles All The Stars (2.85B). Movie syncs (Spider-Verse) give songs a second life for years."}
 ];
 
-var cr=0,sc=0,vt=false,cur=0,tot=10;
+var cr=0,sc=0,vt=false,cur=0,tot=12;
 
 function load(){
   if(cr>=R.length)return;vt=false;var r=R[cr];
